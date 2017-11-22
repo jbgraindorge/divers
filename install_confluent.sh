@@ -3,7 +3,7 @@
 install_dependencies()
 {
 	echo "Installing Java 1.8 (openjdk)"
-	yum -y install java-1.8.0-openjdk
+	yum -y -q install java-1.8.0-openjdk maven git
 }
 
 install_confluent()
@@ -13,7 +13,7 @@ install_confluent()
 	wget https://raw.githubusercontent.com/jbgraindorge/divers/master/confluent.repo
   yum clean all
 	echo "Installing confluent"
-	yum -y install confluent-platform-oss-2.11
+	yum -y -q install confluent-platform-oss-2.11
 
 	#echo "Ensuring Cassandra starts on boot"
 	#/sbin/chkconfig --add cassandra

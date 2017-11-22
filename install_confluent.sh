@@ -40,7 +40,7 @@ install_twitter_connector()
   mv kafka-connect-twitter kafka-connect-twitter-bad
   cd kafka-connect-twitter-bad
   mvn clean package
-  cp /usr/local/kafka-connect-twitter/target/kafka-connect-target/usr/share/kafka-connect/kafka-connect-twitter/* /usr/local/share/kafka/plugins/
+  cp /root/kafka-connect-twitter-bad/target/kafka-connect-target/usr/share/kafka-connect/kafka-connect-twitter/* /usr/local/share/kafka/plugins/
   ##INSTALL SECOND REPO
   cd /root/
   git clone https://github.com/Eneco/kafka-connect-twitter.git

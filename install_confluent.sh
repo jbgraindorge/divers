@@ -3,7 +3,7 @@
 install_dependencies()
 {
 echo "Installing Java 1.8 (openjdk)"
-yum -y -q install java-1.8.0-openjdk git
+yum -y -q install java-1.8.0-openjdk java-1.8.0-openjdk-devel git
 wget http://www.eu.apache.org/dist/maven/maven-3/3.3.9/binaries/apache-maven-3.3.9-bin.tar.gz
 tar xzf apache-maven-3.3.9-bin.tar.gz
 mkdir /usr/local/maven

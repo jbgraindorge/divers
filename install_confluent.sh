@@ -31,11 +31,16 @@ install_confluent()
 
 install_twitter_connector()
 {
-  cd /usr/local/
-  git clone https://github.com/jcustenborder/kafka-connect-twitter.git
-  cd kafka-connect-twitter
+  cd /root/
+  git clone https://github.com/Eneco/kafka-connect-twitter.git
+  cd kafka-connect-twitter/
   mvn clean package
-  echo "plugin.path=/usr/local/kafka-connect-twitter/target/kafka-connect-twitter-0.2-SNAPSHOT.tar.gz" >> /etc/schema-registry/connect-avro-distributed.properties
+  cp twitter-source.properties.example twitter-source.properties
+  cd /root/
+  wget http://central.maven.org/maven2/com/twitter/joauth/6.0.2/joauth-6.0.2.jar
+  git clone https://github.com/twitter/hbc.git
+  cd hbc
+  mvn install
 }
 
 ensure_system_updated()

@@ -53,7 +53,7 @@ install_twitter_connector()
   git clone https://github.com/twitter/hbc.git
   cd hbc
   mvn install
-  echo "export CLASSPATH=/root/kafka-connect-twitter/target/kafka-connect-twitter-0.1-jar-with-dependencies.jar:/root/kafka-connect-twitter/target/:/root/kafka-connect-twitter/target/classes/:/usr/share/java/httpcomponents/httpclient.jar:/root/hbc/hbc-core/target/classes/:/root/hbc/hbc-example/target/classes/:/root/hbc" >> /root/.bashrc
+  echo "export CLASSPATH=/usr/local/share/kafka/plugins/twitter4j-core-4.0.6.jar:/usr/local/share/kafka/plugins/twitter4j-stream-4.0.6.jar:/usr/local/share/kafka/plugins/joauth-6.0.2.jar:/usr/local/share/kafka/plugins/:/root/kafka-connect-twitter/target/classes/:/root/hbc/hbc-core/target/classes/:/root/hbc/hbc-twitter4j/target/classes/:/root/hbc/hbc-twitter4j/target/classes/com/twitter/hbc/twitter4j:/root/hbc/hbc-twitter4j/target/classes/twitter4j" >> /root/.bashrc
 }
 
 ensure_system_updated()

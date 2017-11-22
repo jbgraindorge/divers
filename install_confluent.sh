@@ -33,6 +33,10 @@ cat <<EOF >> /etc/schema-registry/connect-avro-standalone.properties
 consumer.interceptor.classes=io.confluent.monitoring.clients.interceptor.MonitoringConsumerInterceptor
 producer.interceptor.classes=io.confluent.monitoring.clients.interceptor.MonitoringProducerInterceptor
 EOF
+sed -i '/#metric.reporters=io.confluent.metrics.reporter.ConfluentMetricsReporter/metric.reporters=io.confluent.metrics.reporter.ConfluentMetricsReporter/' /etc/kafka/server.properties
+sed -i '/#confluent.metrics.reporter.bootstrap.servers=localhost:9092/confluent.metrics.reporter.bootstrap.servers=localhost:9092/' /etc/kafka/server.properties
+sed -i '/#confluent.metrics.reporter.topic.replicas=1/confluent.metrics.reporter.topic.replicas=1/' /etc/kafka/server.properties
+
 	confluent start
 	confluent stop connect
 

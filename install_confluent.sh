@@ -20,6 +20,19 @@ install_confluent()
   yum clean all
 	echo "Installing confluent"
 	yum -y -q install confluent-platform-oss-2.11 confluent-support-metrics.noarch confluent-control-center.noarch
+	cat <<EOF >> /etc/schema-registry/connect-avro-distributed.properties
+
+# Interceptor setup
+consumer.interceptor.classes=io.confluent.monitoring.clients.interceptor.MonitoringConsumerInterceptor
+producer.interceptor.classes=io.confluent.monitoring.clients.interceptor.MonitoringProducerInterceptor
+EOF
+
+cat <<EOF >> /etc/schema-registry/connect-avro-standalone.properties
+
+# Interceptor setup
+consumer.interceptor.classes=io.confluent.monitoring.clients.interceptor.MonitoringConsumerInterceptor
+producer.interceptor.classes=io.confluent.monitoring.clients.interceptor.MonitoringProducerInterceptor
+EOF
 	confluent start
 	confluent stop connect
 

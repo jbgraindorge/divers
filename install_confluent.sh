@@ -23,6 +23,15 @@ install_confluent()
 	#systemctl start cassandra
 }
 
+install_twitter_connector()
+{
+  cd /usr/local/
+  git clone https://github.com/jcustenborder/kafka-connect-twitter.git
+  cd kafka-connect-twitter
+  mvn clean package
+  echo "plugin.path=/usr/local/kafka-connect-twitter/target/kafka-connect-twitter-0.2-SNAPSHOT.tar.gz" >> /etc/schema-registry/connect-avro-distributed.properties
+}
+
 ensure_system_updated()
 {
 	#yum makecache fast
@@ -33,4 +42,5 @@ ensure_system_updated()
 
 install_dependencies
 install_confluent
+install_twitter_connector
 ensure_system_updated

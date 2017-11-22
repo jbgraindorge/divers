@@ -46,10 +46,12 @@ install_twitter_connector()
   git clone https://github.com/Eneco/kafka-connect-twitter.git
   cd kafka-connect-twitter/
   mvn clean package
+  find . -type f -iname '*.jar' -exec cp '{}' /usr/local/share/kafka/plugins/ \;
   cp twitter-source.properties.example twitter-source.properties
   ##INSTALL SOME MISSING
-  cd /root/
+  cd /usr/local/share/kafka/plugins/
   wget http://central.maven.org/maven2/com/twitter/joauth/6.0.2/joauth-6.0.2.jar
+  cd /root/
   git clone https://github.com/twitter/hbc.git
   cd hbc
   mvn install

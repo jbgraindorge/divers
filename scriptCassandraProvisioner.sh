@@ -4,6 +4,9 @@ install_dependencies()
 {
 	echo "Installing Java 1.8 (openjdk)"
 	yum -y install java-1.8.0-openjdk
+	yum -y -q install https://s3-us-west-2.amazonaws.com/grafana-releases/release/grafana-4.6.2-1.x86_64.rpm
+	/bin/systemctl enable grafana-server.service
+	/bin/systemctl start grafana-server.service
 }
 
 install_cassandra()

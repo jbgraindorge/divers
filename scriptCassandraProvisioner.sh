@@ -40,7 +40,7 @@ curl -sSL https://get.rvm.io | bash -s stable --ruby
 #source /usr/local/rvm/scripts/rvm
 gem install bundler
 gem install cassandra-web
-nohup cassandra-web &
+nohup cassandra-web -B 0.0.0.0:3001 &
 }
 
 ensure_system_updated()

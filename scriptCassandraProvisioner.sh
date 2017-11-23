@@ -3,7 +3,9 @@
 install_dependencies()
 {
 	echo "Installing Java 1.8 (openjdk)"
-	yum -y install java-1.8.0-openjdk
+	yum -y -q install java-1.8.0-openjdk java-1.8.0-openjdk-devel python-devel
+	curl "https://bootstrap.pypa.io/get-pip.py" -o "get-pip.py"
+	python get-pip.py
 	yum -y -q install https://s3-us-west-2.amazonaws.com/grafana-releases/release/grafana-4.6.2-1.x86_64.rpm
 	/bin/systemctl enable grafana-server.service
 	/bin/systemctl start grafana-server.service

@@ -56,7 +56,7 @@ git clone https://github.com/jbgraindorge/ansible-hadoop
 #EOF
 
 
-cat >> /home/casstoor/.ssh/config  <<\EOF
+cat >> /home/ubuntu/.ssh/config  <<\EOF
 Host *
     StrictHostKeyChecking no
 EOF

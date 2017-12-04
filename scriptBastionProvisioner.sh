@@ -107,8 +107,8 @@ sed -i \
   -e 's/^arcadia: .*/arcadia: false/' \
   -e "s/^cluster_name: .*/cluster_name: 'hdp-cluster'/" \
   -e "s/^ambari_version: .*/ambari_version: '2.5.2.0'/" \
-  -e "s/^admin_password: .*/admin_password: '${admin_password}'/" \
-  -e "s/^services_password: .*/services_password: '${services_password}'/" \
+  -e "s/^admin_password: .*/admin_password: 'admin'/" \
+  -e "s/^services_password: .*/services_password: 'admin'/" \
   /home/ubuntu/ansible-hadoop/playbooks/group_vars/hortonworks
 
 chown -R ubuntu: /home/ubuntu/

@@ -25,9 +25,9 @@ mkdir -p /home/ubuntu/.ssh
 chmod 700 /home/ubuntu/.ssh
 chown -R ubuntu: /home/ubuntu/.ssh
 # Generate private key
-cat > /home/ubuntu/.ssh/id_rsa <<\EOF
-${ssh_private_key}
-EOF
+#cat > /home/ubuntu/.ssh/id_rsa <<\EOF
+#${ssh_private_key}
+#EOF
 
 chmod 600 /home/ubuntu/.ssh/id_rsa
 chown -R ubuntu: /home/ubuntu/

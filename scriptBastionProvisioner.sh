@@ -72,7 +72,7 @@ cat > /home/ubuntu/ansible-hadoop/inventory/static <<\EOF
 10.0.1.67 ansible_ssh_user=ubuntu ansible_python_interpreter=/usr/bin/python3
 EOF
 
-ansible all -b -m copy -a "src=/tmp/hosts dest=/etc/hosts"
+#ansible all -b -m copy -a "src=/tmp/hosts dest=/etc/hosts"
 
 cat > /home/ubuntu/ansible-hadoop/playbooks/group_vars/master-nodes <<\EOF
 cluster_interface: 'eth0'

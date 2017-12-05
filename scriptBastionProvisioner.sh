@@ -64,12 +64,12 @@ EOF
 
 cat > /home/ubuntu/ansible-hadoop/inventory/static <<\EOF
 [master-nodes]
-10.0.1.55 ansible_ssh_user=ubuntu ansible_python_interpreter=/usr/bin/python3
-10.0.1.56 ansible_ssh_user=ubuntu ansible_python_interpreter=/usr/bin/python3
+10.0.1.55 ansible_ssh_host=10.0.1.55 ansible_ssh_user=ubuntu ansible_python_interpreter=/usr/bin/python3
+10.0.1.56 ansible_ssh_host=10.0.1.56 ansible_ssh_user=ubuntu ansible_python_interpreter=/usr/bin/python3
 [slave-nodes]
-10.0.1.65 ansible_ssh_user=ubuntu ansible_python_interpreter=/usr/bin/python3
-10.0.1.66 ansible_ssh_user=ubuntu ansible_python_interpreter=/usr/bin/python3
-10.0.1.67 ansible_ssh_user=ubuntu ansible_python_interpreter=/usr/bin/python3
+10.0.1.65 ansible_ssh_host=10.0.1.65 ansible_ssh_user=ubuntu ansible_python_interpreter=/usr/bin/python3
+10.0.1.66 ansible_ssh_host=10.0.1.66 ansible_ssh_user=ubuntu ansible_python_interpreter=/usr/bin/python3
+10.0.1.67 ansible_ssh_host=10.0.1.67 ansible_ssh_user=ubuntu ansible_python_interpreter=/usr/bin/python3
 EOF
 
 #ansible all -b -m copy -a "src=/tmp/hosts dest=/etc/hosts"

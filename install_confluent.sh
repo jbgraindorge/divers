@@ -36,9 +36,13 @@ EOF
 sed -i '/#metric.reporters=io.confluent.metrics.reporter.ConfluentMetricsReporter/metric.reporters=io.confluent.metrics.reporter.ConfluentMetricsReporter/' /etc/kafka/server.properties
 sed -i '/#confluent.metrics.reporter.bootstrap.servers=localhost:9092/confluent.metrics.reporter.bootstrap.servers=localhost:9092/' /etc/kafka/server.properties
 sed -i '/#confluent.metrics.reporter.topic.replicas=1/confluent.metrics.reporter.topic.replicas=1/' /etc/kafka/server.properties
+sed -i '/#confluent.controlcenter.internal.topics.replication=3/confluent.controlcenter.internal.topics.replication=1/' /etc/confluent-control-center/control-center.properties
+sed -i '/#confluent.controlcenter.command.topic.replication=3/confluent.controlcenter.command.topic.replication=1/' /etc/confluent-control-center/control-center.properties
+sed -i '/#confluent.monitoring.interceptor.topic.replication=3/confluent.monitoring.interceptor.topic.replication=1/' /etc/confluent-control-center/control-center.properties
+sed -i '/#confluent.metrics.topic.replication=3/confluent.metrics.topic.replication=1/' /etc/confluent-control-center/control-center.properties
 
 	confluent start
-	confluent stop connect
+	#confluent stop connect
 nohup control-center-start /etc/confluent-control-center/control-center.properties &
 	#echo "Ensuring Cassandra starts on boot"
 	#/sbin/chkconfig --add cassandra

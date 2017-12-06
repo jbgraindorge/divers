@@ -42,6 +42,9 @@ sed -i '/#confluent.monitoring.interceptor.topic.replication=3/confluent.monitor
 sed -i '/#confluent.metrics.topic.replication=3/confluent.metrics.topic.replication=1/' /etc/confluent-control-center/control-center.properties
 
 	confluent start
+	confluent start
+	confluent start
+	confluent start
 	#confluent stop connect
 nohup control-center-start /etc/confluent-control-center/control-center.properties &
 	#echo "Ensuring Cassandra starts on boot"

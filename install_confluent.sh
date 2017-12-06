@@ -33,13 +33,13 @@ cat <<EOF >> /etc/schema-registry/connect-avro-standalone.properties
 consumer.interceptor.classes=io.confluent.monitoring.clients.interceptor.MonitoringConsumerInterceptor
 producer.interceptor.classes=io.confluent.monitoring.clients.interceptor.MonitoringProducerInterceptor
 EOF
-sed -i '/#metric.reporters=io.confluent.metrics.reporter.ConfluentMetricsReporter/metric.reporters=io.confluent.metrics.reporter.ConfluentMetricsReporter/' /etc/kafka/server.properties
-sed -i '/#confluent.metrics.reporter.bootstrap.servers=localhost:9092/confluent.metrics.reporter.bootstrap.servers=localhost:9092/' /etc/kafka/server.properties
-sed -i '/#confluent.metrics.reporter.topic.replicas=1/confluent.metrics.reporter.topic.replicas=1/' /etc/kafka/server.properties
-sed -i '/#confluent.controlcenter.internal.topics.replication=3/confluent.controlcenter.internal.topics.replication=1/' /etc/confluent-control-center/control-center.properties
-sed -i '/#confluent.controlcenter.command.topic.replication=3/confluent.controlcenter.command.topic.replication=1/' /etc/confluent-control-center/control-center.properties
-sed -i '/#confluent.monitoring.interceptor.topic.replication=3/confluent.monitoring.interceptor.topic.replication=1/' /etc/confluent-control-center/control-center.properties
-sed -i '/#confluent.metrics.topic.replication=3/confluent.metrics.topic.replication=1/' /etc/confluent-control-center/control-center.properties
+sed -i.bck '/\#metric.reporters=io.confluent.metrics.reporter.ConfluentMetricsReporter/metric.reporters=io.confluent.metrics.reporter.ConfluentMetricsReporter/' /etc/kafka/server.properties
+sed -i.bck '/\#confluent.metrics.reporter.bootstrap.servers=localhost:9092/confluent.metrics.reporter.bootstrap.servers=localhost:9092/' /etc/kafka/server.properties
+sed -i.bck '/\#confluent.metrics.reporter.topic.replicas=1/confluent.metrics.reporter.topic.replicas=1' /etc/kafka/server.properties
+sed -i.bck '/\#confluent.controlcenter.internal.topics.replication=3/confluent.controlcenter.internal.topics.replication=1' /etc/confluent-control-center/control-center.properties
+sed -i.bck '/\#confluent.controlcenter.command.topic.replication=3/confluent.controlcenter.command.topic.replication=1' /etc/confluent-control-center/control-center.properties
+sed -i.bck '/\#confluent.monitoring.interceptor.topic.replication=3/confluent.monitoring.interceptor.topic.replication=1' /etc/confluent-control-center/control-center.properties
+sed -i.bck '/\#confluent.metrics.topic.replication=3/confluent.metrics.topic.replication=1' /etc/confluent-control-center/control-center.properties
 
 	confluent start
 	confluent start

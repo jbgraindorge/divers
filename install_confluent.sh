@@ -96,5 +96,5 @@ ensure_system_updated()
 
 install_dependencies
 install_confluent
-install_twitter_connector
+#install_twitter_connector
 ensure_system_updated

@@ -41,12 +41,12 @@ sed -i.bck '/\#confluent.controlcenter.command.topic.replication=3/confluent.con
 sed -i.bck '/\#confluent.monitoring.interceptor.topic.replication=3/confluent.monitoring.interceptor.topic.replication=1' /etc/confluent-control-center/control-center.properties
 sed -i.bck '/\#confluent.metrics.topic.replication=3/confluent.metrics.topic.replication=1' /etc/confluent-control-center/control-center.properties
 
-	confluent start
-	confluent start
-	confluent start
-	confluent start
+	sudo confluent start
+	sudo confluent start
+	sudo confluent start
+	sudo confluent start
 	#confluent stop connect
-nohup control-center-start /etc/confluent-control-center/control-center.properties &
+sudo nohup control-center-start /etc/confluent-control-center/control-center.properties &
 	#echo "Ensuring Cassandra starts on boot"
 	#/sbin/chkconfig --add cassandra
 	#/sbin/chkconfig cassandra on

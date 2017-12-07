@@ -44,7 +44,7 @@ echo "metric.reporters=io.confluent.metrics.reporter.ConfluentMetricsReporter" >
 echo "confluent.metrics.reporter.bootstrap.servers=localhost:9092" >> /etc/kafka/server.properties
 echo "confluent.metrics.reporter.topic.replicas=1" >> /etc/kafka/server.properties
 echo "confluent.controlcenter.internal.topics.replication=1" >> /etc/confluent-control-center/control-center.properties
-echo "confluent.monitoring.interceptor.topic.replication=1" >> /etc/confluent-control-center/control-center.properties
+echo "confluent.controlcenter.command.topic.replication=1" >> /etc/confluent-control-center/control-center.properties
 echo "confluent.monitoring.interceptor.topic.replication=1" >> /etc/confluent-control-center/control-center.properties
 echo "confluent.metrics.topic.replication=1" >> /etc/confluent-control-center/control-center.properties
 
